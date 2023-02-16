@@ -1,0 +1,1 @@
+print("This module needs to be run as a script. Please run 'python -m downtime' instead of importing it.")
