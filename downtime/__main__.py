@@ -9,7 +9,7 @@ VERSION = "0.1.0"
 
 if __name__ == "__main__":
     if len(sys.argv) == 1:
-        print("No perameters given. Type 'downtime help' for help")
+        print("No parameters given. Type 'downtime help' for help")
     elif sys.argv[1] == "add":
         print("Welcome to downtime diary")
         print("Please enter the date and time the downtime started in the format DD/MM/YYYY HH:MM")
@@ -142,7 +142,7 @@ if __name__ == "__main__":
     elif sys.argv[1] == "about":
         print("Downtime diary is a simple command line tool to keep track of downtime")
         print("Downtime diary was created by awesomelewis2007")
-        print("Downtime diary is licensed under the MIT license")
+        print("Downtime diary is licensed under the GNUv3 license")
 
     else:
         print("Invalid command. Please enter a valid command")
