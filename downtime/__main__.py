@@ -1,6 +1,8 @@
 # Downtime Diary
 # A simple and lightweight downtime logger for your linux server
 # Github: https://www.github.com/awesomelewis2007/downtime_diary
+# License: GPL-3.0
+# By: Lewis Evans
 
 import os
 import sys
