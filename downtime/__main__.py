@@ -6,6 +6,7 @@
 
 import os
 import sys
+
 try:
     from colorama import Fore, Back, Style
 except ImportError:
@@ -18,9 +19,13 @@ if __name__ == "__main__":
         print("No parameters given. Type 'downtime help' for help")
     elif sys.argv[1] == "add":
         print("Welcome to downtime diary")
-        print("Please enter the date and time the downtime started in the format DD/MM/YYYY HH:MM")
+        print(
+            "Please enter the date and time the downtime started in the format DD/MM/YYYY HH:MM"
+        )
         start = input("Start time: ")
-        print("Please enter the date and time the downtime ended in the format DD/MM/YYYY HH:MM")
+        print(
+            "Please enter the date and time the downtime ended in the format DD/MM/YYYY HH:MM"
+        )
         end = input("End time: ")
         if "-" in start:
             start = start.replace("-", "")
@@ -36,7 +41,12 @@ if __name__ == "__main__":
             print("\tCritical")
             print("\tMaintenance")
             severity = input("Severity: ")
-            if severity.lower() == "minor" or severity.lower() == "major" or severity.lower() == "critical" or severity.lower() == "maintenance":
+            if (
+                severity.lower() == "minor"
+                or severity.lower() == "major"
+                or severity.lower() == "critical"
+                or severity.lower() == "maintenance"
+            ):
                 break
             else:
                 print("Invalid severity. Please enter a valid severity")
@@ -55,24 +65,112 @@ if __name__ == "__main__":
         if os.path.exists(os.path.expanduser("~/.downtimes.log")):
             with open(os.path.expanduser("~/.downtimes.log"), "a") as f:
                 if severity.lower() == "minor":
-                    f.write("[!] MINOR DOWNTIME-"+start+"-"+end+"-"+reason+"-"+severity+"-"+note)
+                    f.write(
+                        "[!] MINOR DOWNTIME-"
+                        + start
+                        + "-"
+                        + end
+                        + "-"
+                        + reason
+                        + "-"
+                        + severity
+                        + "-"
+                        + note
+                    )
                 elif severity.lower() == "major":
-                    f.write("[x] MAJOR DOWNTIME-"+start+"-"+end+"-"+reason+"-"+severity+"-"+note)
+                    f.write(
+                        "[x] MAJOR DOWNTIME-"
+                        + start
+                        + "-"
+                        + end
+                        + "-"
+                        + reason
+                        + "-"
+                        + severity
+                        + "-"
+                        + note
+                    )
                 elif severity.lower() == "critical":
-                    f.write("[X] CRITICAL DOWNTIME-"+start+"-"+end+"-"+reason+"-"+severity+"-"+note)
+                    f.write(
+                        "[X] CRITICAL DOWNTIME-"
+                        + start
+                        + "-"
+                        + end
+                        + "-"
+                        + reason
+                        + "-"
+                        + severity
+                        + "-"
+                        + note
+                    )
                 elif severity.lower() == "maintenance":
-                    f.write("[*] MAINTENANCE-"+start+"-"+end+"-"+reason+"-"+severity+"-"+note)
+                    f.write(
+                        "[*] MAINTENANCE-"
+                        + start
+                        + "-"
+                        + end
+                        + "-"
+                        + reason
+                        + "-"
+                        + severity
+                        + "-"
+                        + note
+                    )
 
         else:
             with open(os.path.expanduser("~/.downtimes.log"), "w") as f:
                 if severity.lower() == "minor":
-                    f.write("[!] MINOR DOWNTIME-"+start+"-"+end+"-"+reason+"-"+severity+"-"+note)
+                    f.write(
+                        "[!] MINOR DOWNTIME-"
+                        + start
+                        + "-"
+                        + end
+                        + "-"
+                        + reason
+                        + "-"
+                        + severity
+                        + "-"
+                        + note
+                    )
                 elif severity.lower() == "major":
-                    f.write("[x] MAJOR DOWNTIME-"+start+"-"+end+"-"+reason+"-"+severity+"-"+note)
+                    f.write(
+                        "[x] MAJOR DOWNTIME-"
+                        + start
+                        + "-"
+                        + end
+                        + "-"
+                        + reason
+                        + "-"
+                        + severity
+                        + "-"
+                        + note
+                    )
                 elif severity.lower() == "critical":
-                    f.write("[X] CRITICAL DOWNTIME-"+start+"-"+end+"-"+reason+"-"+severity+"-"+note)
+                    f.write(
+                        "[X] CRITICAL DOWNTIME-"
+                        + start
+                        + "-"
+                        + end
+                        + "-"
+                        + reason
+                        + "-"
+                        + severity
+                        + "-"
+                        + note
+                    )
                 elif severity.lower() == "maintenance":
-                    f.write("[*] MAINTENANCE-"+start+"-"+end+"-"+reason+"-"+severity+"-"+note)
+                    f.write(
+                        "[*] MAINTENANCE-"
+                        + start
+                        + "-"
+                        + end
+                        + "-"
+                        + reason
+                        + "-"
+                        + severity
+                        + "-"
+                        + note
+                    )
 
     elif sys.argv[1] == "view":
         if os.path.exists(os.path.expanduser("~/.downtimes.log")):
@@ -85,36 +183,36 @@ if __name__ == "__main__":
                 note = log.split("-")[5]
 
                 if log.startswith("[!]"):
-                    print(Fore.YELLOW+"[!] Minor downtime"+Style.RESET_ALL)
-                    print("Start time: "+start)
-                    print("End time: "+end)
-                    print("Reason: "+reason)
-                    print("Severity: "+severity)
-                    print("Note: "+note)
+                    print(Fore.YELLOW + "[!] Minor downtime" + Style.RESET_ALL)
+                    print("Start time: " + start)
+                    print("End time: " + end)
+                    print("Reason: " + reason)
+                    print("Severity: " + severity)
+                    print("Note: " + note)
 
                 elif log.startswith("[x]"):
-                    print(Fore.RED+"[x] Major downtime"+Style.RESET_ALL)
-                    print("Start time: "+start)
-                    print("End time: "+end)
-                    print("Reason: "+reason)
-                    print("Severity: "+severity)
-                    print("Note: "+note)
+                    print(Fore.RED + "[x] Major downtime" + Style.RESET_ALL)
+                    print("Start time: " + start)
+                    print("End time: " + end)
+                    print("Reason: " + reason)
+                    print("Severity: " + severity)
+                    print("Note: " + note)
 
                 elif log.startswith("[X]"):
-                    print(Fore.RED+"[X] Critical downtime"+Style.RESET_ALL)
-                    print("Start time: "+start)
-                    print("End time: "+end)
-                    print("Reason: "+reason)
-                    print("Severity: "+severity)
-                    print("Note: "+note)
+                    print(Fore.RED + "[X] Critical downtime" + Style.RESET_ALL)
+                    print("Start time: " + start)
+                    print("End time: " + end)
+                    print("Reason: " + reason)
+                    print("Severity: " + severity)
+                    print("Note: " + note)
 
                 elif log.startswith("[*]"):
-                    print(Fore.BLUE+"[*] Maintenance"+Style.RESET_ALL)
-                    print("Start time: "+start)
-                    print("End time: "+end)
-                    print("Reason: "+reason)
-                    print("Severity: "+severity)
-                    print("Note: "+note)
+                    print(Fore.BLUE + "[*] Maintenance" + Style.RESET_ALL)
+                    print("Start time: " + start)
+                    print("End time: " + end)
+                    print("Reason: " + reason)
+                    print("Severity: " + severity)
+                    print("Note: " + note)
         else:
             print("The log file doesn't exist. Please add a downtime entry first")
 
@@ -143,7 +241,7 @@ if __name__ == "__main__":
         print("downtime help - View this help page")
 
     elif sys.argv[1] == "version":
-        print("Downtime diary version "+VERSION)
+        print("Downtime diary version " + VERSION)
 
     elif sys.argv[1] == "about":
         print("Downtime diary is a simple command line tool to keep track of downtime")
