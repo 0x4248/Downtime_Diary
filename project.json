@@ -1,0 +1,14 @@
+{
+    "name": "Downtime_Diary",
+    "description": "A simple and lightweight downtime logger for your linux server.",
+    "version": "",
+    "main_file": "downtime/__main__.py",
+    "author": "Lewis Evans",
+    "license": "GNU General Public License v3.0",
+    "url": "https://www.github.com/awesomelewis2007/Downtime_Diary",
+    "email": "none",
+    "languages": [
+        "python"
+    ],
+    "actions": {}
+}
