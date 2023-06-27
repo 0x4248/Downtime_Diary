@@ -5,7 +5,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setuptools.setup(
     name="Downtime Diary",
-    url="https://github.com/awesomelewis2007/downtime-diary/",
+    url="https://github.com/lewisevans2007/downtime-diary/",
     author="Lewis",
     packages=["downtime"],
     install_requires=[""],
