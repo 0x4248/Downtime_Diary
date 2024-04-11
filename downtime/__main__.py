@@ -1,8 +1,8 @@
 # Downtime Diary
 # A simple and lightweight downtime logger for your linux server
-# Github: https://www.github.com/lewisevans2007/downtime_diary
+# Github: https://www.github.com/0x4248/downtime_diary
 # Licence: GNU General Public License v3.0
-# By: Lewis Evans
+# By: 0x4248
 
 import os
 import sys
@@ -245,7 +245,7 @@ if __name__ == "__main__":
 
     elif sys.argv[1] == "about":
         print("Downtime diary is a simple command line tool to keep track of downtime")
-        print("Downtime diary was created by lewisevans2007")
+        print("Downtime diary was created by 0x4248")
         print("Downtime diary is licensed under the GNUv3 license")
 
     else:
